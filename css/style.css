@@ -1,0 +1,97 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, .logo { font-family: 'Playfair Display', serif; }
+.accent { color: var(--accent-color); }
+
+/* Navbar - Glassmorphism */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px); /* Efek kaca buram */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; transition: var(--transition); }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+.hero-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+
+/* Projects Grid - Modern Card Layout */
+.section { padding: 5rem 0; }
+.section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.project-tags span {
+    display: inline-block;
+    font-size: 0.8rem;
+    background: rgba(128, 128, 128, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.btn.primary { background: var(--accent-color); color: white; }
+.btn.primary:hover { opacity: 0.9; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Simplicity untuk tutorial ini */
+}
