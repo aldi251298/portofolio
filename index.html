@@ -27,8 +27,78 @@
         <section id="hero" class="hero">
             <div class="container hero-content">
                 <h1 class="hero-title">Building digital <span class="accent">experiences</span> that matter.</h1>
-                <p class="hero-subtitle">Hi, Saya [Nama Anda]. Frontend Developer yang fokus pada performa dan desain minimalis.</p>
-                <a href="#projects" class="btn primary">Lihat Project</a>
+                <p class="hero-subtitle">Hi, Saya [Nama Anda]. Fullstack Developer yang fokus pada arsitektur aplikasi yang scalable dan performa tinggi.</p>
+                <a href="#featured" class="btn primary">Lihat Masterpiece</a>
+            </div>
+        </section>
+
+        <section id="featured" class="section">
+            <div class="container">
+                <p class="section-label">FEATURED PROJECT</p>
+                
+                <div class="featured-card">
+                    <div class="featured-content">
+                        <h2 class="featured-title">Crevalen.xyz</h2>
+                        <p class="featured-desc">
+                            Aplikasi web fullstack modern yang dirancang untuk stabilitas sistem produksi. 
+                            Dibangun dengan fokus pada struktur kode yang rapi dan optimisasi performa tingkat lanjut.
+                        </p>
+                        
+                        <div class="featured-highlights">
+                            <div class="highlight-item">
+                                <strong>Architecture:</strong> SvelteKit & Vite (Frontend), Prisma ORM (Data Layer).
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Performance:</strong> Redis Caching & Server-side rendering.
+                            </div>
+                            <div class="highlight-item">
+                                <strong>Role:</strong> End-to-end Development, Architecture, & Deployment.
+                            </div>
+                        </div>
+
+                        <div class="tech-stack-list">
+                            <span>SvelteKit</span>
+                            <span>TypeScript</span>
+                            <span>Tailwind</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                            <span>Vercel</span>
+                        </div>
+
+                        <div class="featured-actions">
+                            <a href="https:www.//crevalen.xyz" target="_blank" class="btn primary">Live Demo ↗</a>
+                            <a href="#" target="_blank" class="btn outline">View Source <i class="github-icon"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-visual">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-body">
+                                <div class="code-snippet">
+                                    <span class="code-green">import</span> { list } <span class="code-green">from</span> <span class="code-blue">'@vercel/blob'</span>;<br>
+                                    <span class="code-purple">export const</span> load = <span class="code-purple">async</span> () => {<br>
+                                    &nbsp;&nbsp;<span class="code-purple">const</span> { blobs } = <span class="code-purple">await</span> list();<br>
+                                    &nbsp;&nbsp;<span class="code-purple">return</span> { blobs };<br>
+                                    }
+                                </div>
+                                <div class="visual-label">High Performance Architecture</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Other Experiments</h2>
+                <div id="project-grid" class="project-grid">
+                    </div>
             </div>
         </section>
 
