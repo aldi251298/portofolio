@@ -263,7 +263,23 @@
         }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
         scrollElements.forEach((el) => observer.observe(el));
+        /* --- LOGIKA NAVBAR SHOW/HIDE --- */
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Kalau scroll ke BAWAH & sudah melewati 100px -> Sembunyikan
+            navbar.classList.add('hidden');
+        } else {
+            // Kalau scroll ke ATAS -> Tampilkan
+            navbar.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -276,3 +292,4 @@
     </script>
 </body>
 </html>
+
