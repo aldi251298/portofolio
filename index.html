@@ -201,6 +201,44 @@
             <p>&copy; 2026 Crafted with Code & Logic.</p>
         </div>
     </footer>
+<script>
+        // 1. Pilih elemen yang ingin di-animasikan saat scroll
+        const scrollElements = document.querySelectorAll('.philo-card, .project-row, .section-header');
 
+        // 2. Tambahkan class awal 'reveal-element' ke semua target
+        scrollElements.forEach((el) => {
+            el.classList.add('reveal-element');
+        });
+
+        // 3. Buat Observer (Pengamat)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Saat elemen masuk layar, tambahkan class 'active'
+                    entry.target.classList.add('active');
+                    // (Opsional) Hentikan observasi agar animasi cuma jalan sekali
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.15, // Animasi jalan saat 15% elemen terlihat
+            rootMargin: "0px 0px -50px 0px" // Offset sedikit dari bawah
+        });
+
+        // 4. Mulai mengamati
+        scrollElements.forEach((el) => observer.observe(el));
+        
+        // --- Smooth Scroll untuk Navbar ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
+
