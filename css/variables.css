@@ -1,22 +1,51 @@
 :root {
-    /* Color Palette - Modern Dark/Light Theme friendly */
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --accent-color: #2563eb; /* Biru profesional */
-    --card-bg: #f3f4f6;
-    --nav-bg: rgba(255, 255, 255, 0.8);
+    /* Base Colors - Deep Space Theme */
+    --bg-color: #030712; /* Hampir hitam, ada sedikit biru */
+    --card-bg: rgba(17, 24, 39, 0.6); /* Transparan */
+    --card-border: rgba(255, 255, 255, 0.08);
+    
+    /* Text */
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    
+    /* Accents - Electric Indigo & Cyan */
+    --accent-primary: #6366f1; 
+    --accent-glow: rgba(99, 102, 241, 0.5);
     
     /* Spacing & Layout */
-    --container-width: 1100px;
-    --border-radius: 12px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --max-width: 1000px; /* Lebih sempit agar fokus */
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    /* Font sizes */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
-/* Dark Mode Variables (Akan diaktifkan via JS) */
-[data-theme="dark"] {
-    --bg-color: #0f172a;
-    --text-color: #e2e8f0;
-    --accent-color: #38bdf8;
-    --card-bg: #1e293b;
-    --nav-bg: rgba(15, 23, 42, 0.8);
+/* Background Noise Texture (Opsional untuk kesan 'film grain') */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Orbs (Bulatan cahaya di background) */
+body::after {
+    content: "";
+    position: fixed;
+    top: -10%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0.4;
+    filter: blur(80px);
+    z-index: -2;
+    animation: float 10s infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, 50px); }
 }
