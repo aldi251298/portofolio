@@ -48,14 +48,21 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: #fff
    NAVIGATION (STATIC / ABSOLUTE TOP)
    ========================================= */
 .navbar {
-    position: absolute; /* Menempel di atas, scroll ikut halaman */
+    position: fixed; /* Ganti dari absolute ke fixed agar ikut scroll */
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 15px 0; /* Sedikit diperkecil agar lebih rapi */
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    background: linear-gradient(to bottom, rgba(2,6,23,0.9), transparent);
+    background: rgba(2, 6, 23, 0.85); /* Tambah opacity background */
+    backdrop-filter: blur(10px); /* Efek blur kaca */
+    transition: transform 0.3s ease-in-out; /* Animasi halus */
+}
+
+/* Class tambahan untuk menyembunyikan navbar (akan dipanggil JS) */
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 
 .nav-container {
@@ -288,7 +295,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: #fff
 
 .contact-info { display: flex; flex-direction: column; }
 .contact-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
-.contact-value { font-size: 0.95rem; font-weight: 500; color: #fff; margin-top: 4px; }
+.contact-value { 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    color: #fff; 
+    margin-top: 4px;
+    
+    /* Tambahan agar teks panjang seperti email turun ke baris baru */
+    word-break: break-all; 
+    white-space: normal;
+}
 
 /* =========================================
    FOOTER & RESPONSIVE
@@ -315,3 +331,4 @@ footer {
 /* Scroll Animation Utility */
 .reveal-element { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal-element.active { opacity: 1; transform: translateY(0); }
+
