@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Web Architect & Developer</title>
+    <title>Aldi Syahdan Maulana | Fullstack Developer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +15,20 @@
 <body>
 
     <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#hero">Profile</a></li>
-            <li><a href="#philosophy">Approach</a></li>
-            <li><a href="#work">Showcase</a></li>
-        </ul>
+        <div class="container nav-container">
+            <div class="logo">AM.</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Profile</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
         <section id="hero" class="hero-section">
             <div class="container">
-                <div class="hero-badge">Web Developer & Architect</div>
+                <div class="hero-badge">Web Developer</div>
                 <h1 class="hero-title">Building <span class="accent-text">Robust</span> <br> Digital Ecosystems.</h1>
                 
                 <p class="hero-subtitle">
@@ -49,7 +52,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <a href="#work" class="btn-glow">Lihat Project Showcase</a>
+                    <a href="#work" class="btn-glow">Lihat Portfolio</a>
                 </div>
             </div>
         </section>
@@ -93,8 +96,8 @@
                             <h3 class="project-title">Crevalen.xyz</h3>
                             <p class="project-desc">
                                 Aplikasi web fullstack modern yang dikembangkan dari nol hingga produksi. 
-                                Project ini mencakup pengembangan frontend dan backend, pengelolaan database relasional, serta deployment ke cloud. 
-                                Dibangun dengan fokus pada struktur kode rapi, performa optimal (SSR), dan stabilitas sistem.
+                                Mencakup pengembangan frontend, backend, database relasional, dan deployment cloud. 
+                                Fokus pada struktur kode rapi dan performa optimal (SSR).
                             </p>
                             <div class="project-meta">
                                 <strong>Role:</strong> Fullstack Engineering, DevOps<br>
@@ -102,10 +105,11 @@
                             </div>
                             <div class="tech-stack-row">
                                 <span>SvelteKit</span><span>TypeScript</span><span>Tailwind</span>
-                                <span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>Vercel</span>
+                                <span>PostgreSQL</span><span>Prisma</span><span>Redis</span>
                             </div>
                             <div class="project-actions">
-                                <a href="https://crevalen.xyz" target="_blank" class="btn-link">Visit Site ↗</a>
+                                <a href="https://www.crevalen.xyz/" target="_blank" class="btn-link">Visit Web ↗</a>
+                                <a href="https://github.com/crevalen/frontend-svelte.git" target="_blank" class="btn-repo">Source Code</a>
                             </div>
                         </div>
                         <div class="project-image-wrapper">
@@ -115,19 +119,47 @@
 
                     <article class="project-row reverse">
                         <div class="project-content">
+                            <span class="project-tag">FINTECH & REAL-TIME</span>
+                            <h3 class="project-title">Terminal Crypto Arbiter</h3>
+                            <p class="project-desc">
+                                Pemindai arbitrase kripto tingkat profesional. Mengidentifikasi perbedaan harga antara Bursa Global Tier-1 (Binance, Coinbase) dan Pasar Lokal secara real-time. 
+                                Dibangun dengan fokus pada UI/UX Institusional dan logika eksekusi otomatis.
+                            </p>
+                            <div class="project-meta">
+                                <strong>Focus:</strong> Real-time Data, Institutional UI
+                            </div>
+                            <div class="tech-stack-row">
+                                <span>React (Vite)</span><span>TypeScript</span><span>Tailwind v4</span>
+                                <span>Supabase</span><span>Prisma</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://crytp-arbitrage.vercel.app/" target="_blank" class="btn-link">Visit Web ↗</a>
+                                <a href="https://github.com/aldi251298/crytp-arbitrage.git" target="_blank" class="btn-repo">Source Code</a>
+                            </div>
+                        </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/images/crypto.png" alt="Crypto Arbiter Terminal Screenshot" class="project-img">
+                        </div>
+                    </article>
+
+                    <article class="project-row">
+                        <div class="project-content">
                             <span class="project-tag">COMMERCE UX</span>
                             <h3 class="project-title">Interactive Online Store</h3>
                             <p class="project-desc">
-                                Simulasi toko online lengkap dengan alur belanja end-to-end. Pengguna dapat menelusuri katalog, mengelola keranjang belanja (state management), hingga melakukan checkout dengan simulasi pembayaran (sukses/gagal). Fokus utama pada responsivitas UI dan pengalaman pengguna yang mulus.
+                                Simulasi toko online lengkap dengan alur belanja end-to-end. 
+                                Fitur: Katalog produk, manajemen keranjang (state management), checkout, dan simulasi pembayaran. 
+                                Fokus utama pada responsivitas UI dan UX yang mulus.
                             </p>
                             <div class="project-meta">
-                                <strong>Focus:</strong> Frontend Logic, State Management, UX/UI
+                                <strong>Focus:</strong> Frontend Logic, State Management
                             </div>
                             <div class="tech-stack-row">
                                 <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
                             </div>
                             <div class="project-actions">
-                                <a href="https://toko-online-three-nu.vercel.app/" target="_blank" class="btn-link">Try Demo ↗</a>
+                                <a href="https://toko-online-three-nu.vercel.app/" target="_blank" class="btn-link">Visit Web ↗</a>
+                                <a href="https://github.com/aldi251298/toko-online.git" target="_blank" class="btn-repo">Source Code</a>
                             </div>
                         </div>
                         <div class="project-image-wrapper">
@@ -135,23 +167,24 @@
                         </div>
                     </article>
 
-                    <article class="project-row">
+                    <article class="project-row reverse">
                         <div class="project-content">
                             <span class="project-tag">INTERNAL TOOL</span>
-                            <h3 class="project-title">Admin Dashboard System</h3>
+                            <h3 class="project-title">Admin Dashboard</h3>
                             <p class="project-desc">
-                                Dashboard manajemen data yang kompleks untuk keperluan administrasi. 
-                                Fitur mencakup visualisasi data (chart), manajemen tabel data (CRUD), dan sistem autentikasi role-based. 
-                                Dirancang untuk efisiensi workflow dengan antarmuka yang bersih dan informatif.
+                                Panel administrasi untuk manajemen data toko online. 
+                                Fitur mencakup visualisasi data (chart), manajemen produk (CRUD), dan sistem autentikasi. 
+                                Antarmuka dirancang bersih untuk efisiensi workflow admin.
                             </p>
                             <div class="project-meta">
                                 <strong>Role:</strong> Frontend & Backend Logic
                             </div>
                             <div class="tech-stack-row">
-                                <span>React</span><span>Chart.js</span><span>Node.js</span><span>Express</span>
+                                <span>React</span><span>Chart.js</span><span>Node.js</span>
                             </div>
                             <div class="project-actions">
-                                <a href="#" class="btn-link">View Details ↗</a>
+                                <a href="https://toko-online-three-nu.vercel.app/admin" target="_blank" class="btn-link">Visit Web ↗</a>
+                                <a href="https://github.com/aldi251298/toko-online.git" target="_blank" class="btn-repo">Source Code</a>
                             </div>
                         </div>
                         <div class="project-image-wrapper">
@@ -159,30 +192,49 @@
                         </div>
                     </article>
 
-                    <article class="project-row reverse">
-                        <div class="project-content">
-                            <span class="project-tag">FINTECH & REAL-TIME</span>
-                            <h3 class="project-title">Terminal Crypto Arbiter</h3>
-                            <p class="project-desc">
-                                Pemindai arbitrase kripto tingkat profesional yang dirancang untuk mengidentifikasi dan memanfaatkan perbedaan harga antara Bursa Global Tier-1 (Binance, Coinbase) dan Pasar Lokal secara real-time.
-                                Dibangun dengan fokus pada UI/UX Institusional dan logika eksekusi otomatis yang presisi.
-                            </p>
-                            <div class="project-meta">
-                                <strong>Focus:</strong> Real-time Data, Institutional UI, Serverless Logic
-                            </div>
-                            <div class="tech-stack-row">
-                                <span>React (Vite)</span><span>TypeScript</span><span>Tailwind v4</span>
-                                <span>Supabase</span><span>Prisma</span><span>Serverless</span>
-                            </div>
-                            <div class="project-actions">
-                                <a href="#" class="btn-link">View Repository ↗</a>
-                            </div>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="assets/images/crypto-terminal.png" alt="Crypto Arbiter Terminal Screenshot" class="project-img">
-                        </div>
-                    </article>
+                </div>
+            </div>
+        </section>
 
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h2>Ready to Collaborate?</h2>
+                    <p>Mari diskusikan ide besar Anda atau sekadar bertegur sapa.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="mailto:aldimaulana251298@gmail.com" class="contact-card">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">aldimaulana251298@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/6285119042467" target="_blank" class="contact-card">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-info">
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">+62 851-1904-2467</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/aldisyahdan/" target="_blank" class="contact-card">
+                        <span class="contact-icon">💼</span>
+                        <div class="contact-info">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">in/aldisyahdan</span>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/dhyyyy_25" target="_blank" class="contact-card">
+                        <span class="contact-icon">📸</span>
+                        <div class="contact-info">
+                            <span class="contact-label">Instagram</span>
+                            <span class="contact-value">@dhyyyy_25</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -190,12 +242,12 @@
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2026 Crafted with Code & Logic.</p>
+            <p>&copy; 2026 Aldi Maulana. Crafted with Code & Logic.</p>
         </div>
     </footer>
 
     <script>
-        const scrollElements = document.querySelectorAll('.philo-card, .project-row, .section-header');
+        const scrollElements = document.querySelectorAll('.philo-card, .project-row, .section-header, .contact-card');
 
         scrollElements.forEach((el) => {
             el.classList.add('reveal-element');
@@ -208,10 +260,7 @@
                     observer.unobserve(entry.target); 
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        });
+        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
         scrollElements.forEach((el) => observer.observe(el));
         
@@ -225,6 +274,5 @@
             });
         });
     </script>
-
 </body>
 </html>
