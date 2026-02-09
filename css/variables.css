@@ -1,0 +1,53 @@
+:root {
+    /* --- THEME: DEEP SPACE --- */
+    --bg-color: #020617;       /* Hitam Kebiruan */
+    --bg-card: rgba(30, 41, 59, 0.4); 
+    --bg-card-hover: rgba(51, 65, 85, 0.5);
+    
+    /* Text Colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    
+    /* Accents */
+    --accent-color: #6366f1;   /* Indigo */
+    --accent-glow: rgba(99, 102, 241, 0.4);
+    --accent-alt: #06b6d4;     /* Cyan */
+    --highlight: #facc15;      /* Gold */
+    --color-danger: #ef4444;   /* Red */
+    --color-success: #22c55e;  /* Green */
+    
+    /* Borders & Glassmorphism */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(12px);
+    
+    /* Layout & Shapes */
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --max-width: 1150px;
+    
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Background Texture (Noise) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Background Orbs (Glow Effect) */
+body::after {
+    content: "";
+    position: fixed;
+    top: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    opacity: 0.3;
+    filter: blur(80px);
+    z-index: -2;
+}
