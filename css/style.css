@@ -1,149 +1,170 @@
-/* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Typography Modern */
-h1, h2, h3 { font-family: var(--font-display); font-weight: 700; }
-.accent { 
-    background: linear-gradient(135deg, #fff 30%, var(--accent-primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-p { color: var(--text-muted); }
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* Navbar Minimalis */
-.navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
-    padding: 12px 30px;
-    border-radius: 100px;
-    z-index: 100;
-    display: flex;
-    gap: 2rem;
-}
-.nav-links { display: flex; gap: 20px; list-style: none; font-size: 0.9rem; }
-.nav-links a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
-#theme-toggle { display: none; } /* Kita sembunyikan toggle karena tema fix dark */
-
-/* Hero Section - Besar & Berani */
-.hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding-top: 100px;
-}
-.hero-title {
-    font-size: clamp(3rem, 8vw, 5rem); /* Responsif */
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px; /* Kesan modern */
-}
-.hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 3rem;
-}
-.btn-glow {
-    padding: 14px 32px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50px;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.4s;
-    position: relative;
+/* --- SKILLS TICKER (NEW) --- */
+.ticker-wrap {
+    width: 100%;
     overflow: hidden;
-}
-.btn-glow:hover {
-    background: var(--accent-primary);
-    box-shadow: 0 0 30px var(--accent-glow);
-    border-color: transparent;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    padding: 15px 0;
+    margin-bottom: 50px;
 }
 
-/* --- BENTO GRID SYSTEM (About & Featured) --- */
-.section { padding: 100px 0; }
-.section-header { margin-bottom: 3rem; }
-.section-label { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 10px; display: block; }
+.ticker {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
 
-/* Grid Container */
-.bento-grid {
+.ticker__item {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    padding: 0 2rem;
+    font-weight: 700;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.ticker__item:hover {
+    color: var(--accent-primary);
+    opacity: 1;
+    cursor: default;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Geser setengah karena kita menduplikasi isi */
+}
+
+/* --- MAGAZINE GRID LAYOUT --- */
+.magazine-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Kolom */
-    grid-template-rows: auto auto;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 2rem;
 }
 
-/* Card Style Dasar */
-.bento-card {
-    background: var(--card-bg);
+/* 1. COVER STORY (Crevalen) - Span 3 kolom */
+.magazine-cover {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Teks lebih lebar dari gambar */
+    gap: 3rem;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
     border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 3.5rem;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-.bento-card:hover {
-    border-color: rgba(255,255,255,0.3);
-    transform: translateY(-5px);
 }
 
-/* Modifier Ukuran Card */
-.span-2 { grid-column: span 2; } /* Melebar 2 kolom */
-.span-3 { grid-column: span 3; } /* Full width */
-.row-2 { grid-row: span 2; }      /* Tinggi 2 baris */
-
-/* Isi Card */
-.card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.card-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff; }
-
-/* Featured Project Card (Special) */
-.featured-visual {
-    margin-top: 2rem;
-    background: #000;
-    border-radius: 12px;
-    border: 1px solid #333;
-    padding: 10px;
-    /* Efek Glow di dalam card */
-    box-shadow: 0 -20px 40px rgba(99, 102, 241, 0.1); 
-}
-.tech-pill {
-    display: inline-block;
+.cover-tag {
     font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    margin: 5px 5px 0 0;
-    color: #ccc;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #fbbf24; /* Warna Emas untuk highlight */
+    margin-bottom: 1rem;
+    display: block;
 }
 
-/* Responsif Mobile */
-@media (max-width: 768px) {
-    .bento-grid { grid-template-columns: 1fr; } /* Jadi 1 kolom semua */
-    .span-2, .span-3 { grid-column: span 1; }
-    .navbar { width: 90%; bottom: 20px; top: auto; justify-content: center; }
+.cover-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-family: var(--font-display);
+}
+
+.cover-desc {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    max-width: 90%;
+}
+
+.cover-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-primary);
+}
+
+/* Tech Stack Chips */
+.tech-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.tech-stack-row span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--accent-primary);
+}
+
+.cover-actions { display: flex; gap: 20px; }
+.btn-link { font-weight: 700; color: #fff; border-bottom: 2px solid var(--accent-primary); padding-bottom: 2px; }
+.btn-link.dimmed { color: var(--text-muted); border-color: transparent; }
+.btn-link:hover { color: var(--accent-primary); }
+
+/* Visual Browser Mockup */
+.browser-window {
+    background: #0f172a;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #334155;
+    height: 100%;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+.magazine-cover:hover .browser-window { transform: perspective(1000px) rotateY(0); }
+
+.dots { padding: 12px; display: flex; gap: 6px; background: #1e293b; border-bottom: 1px solid #334155; border-radius: 12px 12px 0 0; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
+.dots span:nth-child(1) { background: #ef4444; }
+.dots span:nth-child(2) { background: #eab308; }
+.dots span:nth-child(3) { background: #22c55e; }
+
+.window-content { padding: 20px; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+.c-purple { color: #c084fc; }
+.c-blue { color: #60a5fa; }
+.c-grey { color: #64748b; font-style: italic; }
+
+.status-bar { margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed #334155; display: flex; gap: 15px; font-size: 0.75rem; }
+
+/* 2. SUB ARTICLES (3 Projects Below) */
+.magazine-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.magazine-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+
+.card-category { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
+.card-title { font-size: 1.25rem; margin-bottom: 1rem; color: #fff; }
+.card-text { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1; } /* flex-grow agar tinggi kartu sama */
+
+.card-tags { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.card-tags span { font-size: 0.7rem; padding: 3px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: #cbd5e1; }
+
+.card-link { font-size: 0.85rem; font-weight: 600; color: var(--accent-primary); }
+
+/* RESPONSIF MOBILE */
+@media (max-width: 900px) {
+    .magazine-grid { grid-template-columns: 1fr; }
+    .magazine-cover { grid-column: span 1; grid-template-columns: 1fr; padding: 2rem; }
+    .cover-visual { display: none; } /* Sembunyikan visual berat di mobile */
+    .cover-title { font-size: 2.5rem; }
 }
