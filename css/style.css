@@ -1,145 +1,297 @@
-/* --- SKILLS TICKER (NEW) --- */
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+ul { list-style: none; }
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: #fff; }
+
+.accent {
+    background: linear-gradient(135deg, #fff 30%, var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- NAVBAR (Floating) --- */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    padding: 12px 30px;
+    border-radius: 100px;
+    z-index: 1000;
+}
+
+.nav-links { display: flex; gap: 30px; font-size: 0.9rem; font-weight: 500; }
+.nav-links a:hover { color: var(--accent-primary); }
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 90vh; /* Hampir satu layar penuh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsif otomatis */
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+}
+
+/* Button Glow Effect */
+.btn-glow {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--bg-alt);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-glow::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 0%; height: 100%;
+    background: var(--accent-primary);
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.btn-glow:hover::before { width: 100%; }
+.btn-glow:hover { border-color: transparent; box-shadow: 0 0 20px var(--accent-glow); }
+
+/* --- SKILLS TICKER (Running Text) --- */
 .ticker-wrap {
     width: 100%;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.02);
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
-    padding: 15px 0;
-    margin-bottom: 50px;
+    padding: 1.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .ticker {
-    display: flex;
-    white-space: nowrap;
-    animation: ticker 30s linear infinite;
+    display: inline-block;
+    animation: marquee 40s linear infinite;
 }
 
 .ticker__item {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--text-muted);
+    display: inline-block;
     padding: 0 2rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--text-muted);
     opacity: 0.5;
-    transition: 0.3s;
+    font-weight: 700;
 }
 
-.ticker__item:hover {
-    color: var(--accent-primary);
-    opacity: 1;
-    cursor: default;
-}
-
-@keyframes ticker {
+@keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Geser setengah karena kita menduplikasi isi */
+    100% { transform: translateX(-50%); }
 }
 
-/* --- MAGAZINE GRID LAYOUT --- */
+/* --- MAGAZINE SHOWCASE SECTION --- */
+.section { padding: 100px 0; }
+
+.section-header { text-align: left; margin-bottom: 3rem; }
+.section-label { 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+    color: var(--accent-secondary); 
+    text-transform: uppercase; 
+    display: block; 
+    margin-bottom: 0.5rem; 
+}
+
+/* GRID UTAMA */
 .magazine-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom */
     gap: 30px;
-    margin-top: 2rem;
 }
 
-/* 1. COVER STORY (Crevalen) - Span 3 kolom */
+/* 1. COVER STORY (Crevalen - Lebar Penuh) */
 .magazine-cover {
-    grid-column: span 3;
+    grid-column: span 3; /* Mengambil 3 kolom (full width) */
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Teks lebih lebar dari gambar */
-    gap: 3rem;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+    grid-template-columns: 1fr 1fr; /* Split kiri-kanan */
+    gap: 4rem;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
     border: 1px solid var(--card-border);
     border-radius: var(--radius-lg);
     padding: 3.5rem;
     position: relative;
     overflow: hidden;
+    align-items: center;
 }
+
+.cover-content { z-index: 2; }
 
 .cover-tag {
     font-size: 0.75rem;
-    letter-spacing: 2px;
     font-weight: 700;
-    color: #fbbf24; /* Warna Emas untuk highlight */
+    color: var(--color-warning);
+    letter-spacing: 1.5px;
     margin-bottom: 1rem;
     display: block;
 }
 
 .cover-title {
-    font-size: 3.5rem;
-    line-height: 1.1;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: #fff;
-    font-family: var(--font-display);
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .cover-desc {
-    font-size: 1.1rem;
-    color: #cbd5e1;
+    color: var(--text-muted);
     margin-bottom: 2rem;
-    line-height: 1.8;
-    max-width: 90%;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .cover-meta {
     font-size: 0.9rem;
-    color: var(--text-muted);
     margin-bottom: 2rem;
     padding-left: 1rem;
-    border-left: 2px solid var(--accent-primary);
+    border-left: 3px solid var(--accent-primary);
+    color: #cbd5e1;
 }
 
-/* Tech Stack Chips */
+/* Tech Chips */
 .tech-stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 2.5rem;
 }
 
 .tech-stack-row span {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 6px 14px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--accent-primary);
+    color: var(--accent-secondary);
+    font-weight: 600;
 }
 
-.cover-actions { display: flex; gap: 20px; }
-.btn-link { font-weight: 700; color: #fff; border-bottom: 2px solid var(--accent-primary); padding-bottom: 2px; }
-.btn-link.dimmed { color: var(--text-muted); border-color: transparent; }
-.btn-link:hover { color: var(--accent-primary); }
+.cover-actions a {
+    font-weight: 700;
+    margin-right: 20px;
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: 2px;
+}
+.cover-actions a:hover { color: var(--accent-primary); }
 
-/* Visual Browser Mockup */
+/* Visual Browser Mockup (Sebelah Kanan) */
+.cover-visual {
+    position: relative;
+    height: 100%;
+    min-height: 350px;
+}
+
 .browser-window {
     background: #0f172a;
+    border: 1px solid var(--card-border);
     border-radius: 12px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid #334155;
+    box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
     height: 100%;
-    transform: perspective(1000px) rotateY(-5deg);
+    transform: perspective(1000px) rotateY(-8deg);
     transition: transform 0.5s ease;
 }
-.magazine-cover:hover .browser-window { transform: perspective(1000px) rotateY(0); }
 
-.dots { padding: 12px; display: flex; gap: 6px; background: #1e293b; border-bottom: 1px solid #334155; border-radius: 12px 12px 0 0; }
-.dots span { width: 10px; height: 10px; border-radius: 50%; background: #475569; }
-.dots span:nth-child(1) { background: #ef4444; }
-.dots span:nth-child(2) { background: #eab308; }
-.dots span:nth-child(3) { background: #22c55e; }
+.magazine-cover:hover .browser-window {
+    transform: perspective(1000px) rotateY(0deg);
+}
 
-.window-content { padding: 20px; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+.dots {
+    background: #1e293b;
+    padding: 12px;
+    display: flex;
+    gap: 6px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.dots span { width: 10px; height: 10px; border-radius: 50%; }
+.dots span:nth-child(1) { background: var(--color-danger); }
+.dots span:nth-child(2) { background: var(--color-warning); }
+.dots span:nth-child(3) { background: var(--color-success); }
+
+.window-content {
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+}
+
+.code-block { margin-bottom: 2rem; }
 .c-purple { color: #c084fc; }
 .c-blue { color: #60a5fa; }
 .c-grey { color: #64748b; font-style: italic; }
 
-.status-bar { margin-top: 2rem; padding-top: 1rem; border-top: 1px dashed #334155; display: flex; gap: 15px; font-size: 0.75rem; }
+.status-bar {
+    border-top: 1px dashed #334155;
+    padding-top: 10px;
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    color: var(--color-success);
+}
 
-/* 2. SUB ARTICLES (3 Projects Below) */
+/* 2. SUB PROJECTS (3 Kartu Bawah) */
 .magazine-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -147,24 +299,69 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.magazine-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+.magazine-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.2);
+}
 
-.card-category { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
-.card-title { font-size: 1.25rem; margin-bottom: 1rem; color: #fff; }
-.card-text { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; flex-grow: 1; } /* flex-grow agar tinggi kartu sama */
+.card-category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
 
-.card-tags { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
-.card-tags span { font-size: 0.7rem; padding: 3px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: #cbd5e1; }
+.card-title { font-size: 1.4rem; margin-bottom: 1rem; }
 
-.card-link { font-size: 0.85rem; font-weight: 600; color: var(--accent-primary); }
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Supaya tombol di bawah rata */
+}
 
-/* RESPONSIF MOBILE */
+.card-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.card-tags span {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    color: #cbd5e1;
+}
+
+.card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+}
+
+/* --- RESPONSIVE / MOBILE --- */
 @media (max-width: 900px) {
-    .magazine-grid { grid-template-columns: 1fr; }
-    .magazine-cover { grid-column: span 1; grid-template-columns: 1fr; padding: 2rem; }
-    .cover-visual { display: none; } /* Sembunyikan visual berat di mobile */
-    .cover-title { font-size: 2.5rem; }
+    .magazine-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom semua di HP/Tablet */
+    }
+
+    .magazine-cover {
+        grid-column: span 1; /* Tidak lagi span 3 */
+        grid-template-columns: 1fr; /* Tumpuk vertikal */
+        padding: 2rem;
+    }
+
+    .cover-visual {
+        display: none; /* Sembunyikan visual mockup di HP agar tidak penuh */
+    }
+
+    .hero-title { font-size: 2.5rem; }
+    
+    .navbar {
+        width: 90%;
+        bottom: 20px;
+        top: auto; /* Pindah ke bawah layar */
+        justify-content: center;
+    }
 }
