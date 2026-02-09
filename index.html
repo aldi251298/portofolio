@@ -30,8 +30,7 @@
                 
                 <p class="hero-subtitle">
                     Web developer dengan pengalaman membangun dan mengelola aplikasi web secara end-to-end menggunakan teknologi modern maupun CMS. 
-                    Terbiasa mengerjakan pengembangan fullstack, mulai dari perancangan antarmuka, pengembangan backend, pengelolaan database, hingga deployment dan optimisasi performa. 
-                    Berfokus pada struktur aplikasi yang rapi, stabil, dan siap digunakan dalam skenario nyata.
+                    Fokus pada struktur aplikasi yang rapi, stabil, dan siap digunakan dalam skenario nyata.
                 </p>
 
                 <div class="skill-cluster">
@@ -50,7 +49,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <a href="#work" class="btn-glow">Lihat Magazine Showcase</a>
+                    <a href="#work" class="btn-glow">Lihat Project Showcase</a>
                 </div>
             </div>
         </section>
@@ -61,19 +60,19 @@
                     <article class="philo-card">
                         <div class="philo-icon">🏗️</div>
                         <h3>End-to-End Builder</h3>
-                        <p>Terbiasa menangani seluruh siklus proyek secara mandiri. Dari merancang skema database, menyusun logika backend, hingga memoles interaksi frontend pixel-perfect.</p>
+                        <p>Terbiasa menangani seluruh siklus proyek secara mandiri. Dari merancang database hingga frontend.</p>
                     </article>
 
                     <article class="philo-card">
                         <div class="philo-icon">🛡️</div>
                         <h3>Real-World Resilience</h3>
-                        <p>Fokus pada "Unhappy Path". Sistem dirancang untuk tetap masuk akal dan aman bagi pengguna bahkan ketika terjadi kegagalan jaringan atau input yang tidak valid.</p>
+                        <p>Fokus pada stabilitas sistem saat terjadi error atau input tidak valid.</p>
                     </article>
 
                     <article class="philo-card ai-card">
                         <div class="philo-icon">🤖</div>
                         <h3>AI-Augmented Workflow</h3>
-                        <p>Menggunakan AI sebagai akselerator, bukan "black box". Arsitektur sistem, logika bisnis, dan keputusan teknis tetap berada di bawah <strong>kendali penuh</strong> dan pemahaman saya.</p>
+                        <p>Menggunakan AI untuk akselerasi, namun kendali arsitektur tetap penuh di tangan saya.</p>
                     </article>
                 </div>
             </div>
@@ -86,98 +85,110 @@
                     <h2>Featured Projects</h2>
                 </div>
 
-                <div class="magazine-grid">
+                <div class="project-stack">
                     
-                    <article class="magazine-cover">
-                        <div class="cover-content">
-                            <span class="cover-tag">HIGHLIGHT MASTERPIECE</span>
-                            <h3 class="cover-title">Crevalen.xyz</h3>
-                            
-                            <p class="cover-desc">
-                                Aplikasi web fullstack yang dikembangkan dari nol hingga produksi menggunakan teknologi modern. 
-                                Project ini mencakup pengembangan frontend dan backend, pengelolaan database relasional, serta deployment ke lingkungan cloud. 
-                                Dibangun dengan fokus pada struktur aplikasi yang rapi, performa yang optimal, dan stabilitas sistem untuk penggunaan nyata.
+                    <article class="project-row">
+                        <div class="project-content">
+                            <span class="project-tag">HIGHLIGHT MASTERPIECE</span>
+                            <h3 class="project-title">Crevalen.xyz</h3>
+                            <p class="project-desc">
+                                Aplikasi web fullstack modern yang dikembangkan dari nol hingga produksi. 
+                                Project ini mencakup pengembangan frontend dan backend, pengelolaan database relasional, serta deployment ke cloud. 
+                                Dibangun dengan fokus pada struktur kode rapi, performa optimal (SSR), dan stabilitas sistem.
                             </p>
-                            
-                            <div class="cover-meta">
-                                <strong>Role:</strong> Fullstack Engineering, DevOps, UI/UX<br>
+                            <div class="project-meta">
+                                <strong>Role:</strong> Fullstack Engineering, DevOps<br>
                                 <strong>Status:</strong> Live Production v1.2.0
                             </div>
-
                             <div class="tech-stack-row">
-                                <span>SvelteKit</span>
-                                <span>TypeScript</span>
-                                <span>Tailwind CSS</span>
-                                <span>PostgreSQL</span>
-                                <span>Prisma</span>
-                                <span>Redis</span>
-                                <span>Vercel</span>
+                                <span>SvelteKit</span><span>TypeScript</span><span>Tailwind</span>
+                                <span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>Vercel</span>
                             </div>
-
-                            <div class="cover-actions">
-                                <a href="https://www.crevalen.xyz" target="_blank" class="btn-link">Visit Site ↗</a>
-                            </div>
-                            <div class="cover-actions">
-                                <a href="https://github.com/crevalen/frontend-svelte" target="_blank" class="btn-link">Source Code ↗</a>
+                            <div class="project-actions">
+                                <a href="https://crevalen.xyz" target="_blank" class="btn-link">Visit Site ↗</a>
                             </div>
                         </div>
-                        
-                        <div class="cover-visual">
-                            <div class="browser-window">
+                        <div class="project-image-wrapper">
+                            <img src="assets/images/screnshoot crevalen.png" alt="Crevalen Website Screenshot" class="project-img">
+                        </div>
+                    </article>
+
+                    <article class="project-row reverse">
+                        <div class="project-content">
+                            <span class="project-tag">COMMERCE UX</span>
+                            <h3 class="project-title">Interactive Online Store</h3>
+                            <p class="project-desc">
+                                Simulasi toko online lengkap dengan alur belanja end-to-end. Pengguna dapat menelusuri katalog, mengelola keranjang belanja (state management), hingga melakukan checkout dengan simulasi pembayaran (sukses/gagal). Fokus utama pada responsivitas UI dan pengalaman pengguna yang mulus.
+                            </p>
+                            <div class="project-meta">
+                                <strong>Focus:</strong> Frontend Logic, State Management, UX/UI
+                            </div>
+                            <div class="tech-stack-row">
+                                <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://toko-online-three-nu.vercel.app/" target="_blank" class="btn-link">Try Demo ↗</a>
+                            </div>
+                        </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/images/toko-online.png" alt="Online Store Screenshot" class="project-img">
+                        </div>
+                    </article>
+
+                    <article class="project-row">
+                        <div class="project-content">
+                            <span class="project-tag">INTERNAL TOOL</span>
+                            <h3 class="project-title">Admin Dashboard System</h3>
+                            <p class="project-desc">
+                                Dashboard manajemen data yang kompleks untuk keperluan administrasi. 
+                                Fitur mencakup visualisasi data (chart), manajemen tabel data (CRUD), dan sistem autentikasi role-based. 
+                                Dirancang untuk efisiensi workflow dengan antarmuka yang bersih dan informatif.
+                            </p>
+                            <div class="project-meta">
+                                <strong>Role:</strong> Frontend & Backend Logic
+                            </div>
+                            <div class="tech-stack-row">
+                                <span>React</span><span>Chart.js</span><span>Node.js</span><span>Express</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-link">View Details ↗</a>
+                            </div>
+                        </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/images/dashboard.png" alt="Admin Dashboard Screenshot" class="project-img">
+                        </div>
+                    </article>
+
+                    <article class="project-row reverse">
+                        <div class="project-content">
+                            <span class="project-tag">SEO & CONTENT</span>
+                            <h3 class="project-title">SEO Blog Engine</h3>
+                            <p class="project-desc">
+                                Platform blog kustom yang dioptimalkan untuk performa SEO maksimal. 
+                                Menggunakan arsitektur Static Site Generation (SSG) untuk kecepatan loading instan. 
+                                Terintegrasi dengan Headless CMS untuk kemudahan pengelolaan konten tanpa menyentuh kode.
+                            </p>
+                            <div class="project-meta">
+                                <strong>Focus:</strong> Performance (Lighthouse 100), SEO
+                            </div>
+                            <div class="tech-stack-row">
+                                <span>Astro</span><span>Markdown</span><span>Headless CMS</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-link">View Details ↗</a>
+                            </div>
+                        </div>
+                        <div class="project-image-wrapper code-bg">
+                           <div class="browser-window">
                                 <div class="dots"><span></span><span></span><span></span></div>
-                                <div class="window-content">
-                                    <div class="code-block">
-                                        <span class="c-purple">import</span> { redis } <span class="c-purple">from</span> '$lib/server';<br><br>
-                                        <span class="c-blue">export const</span> load = <span class="c-blue">async</span> ({ params }) => {<br>
-                                        &nbsp;&nbsp;<span class="c-grey">// High performance caching</span><br>
-                                        &nbsp;&nbsp;<span class="c-blue">const</span> cached = <span class="c-purple">await</span> redis.get(params.slug);<br>
-                                        &nbsp;&nbsp;<span class="c-purple">if</span> (cached) <span class="c-purple">return</span> JSON.parse(cached);<br>
-                                        &nbsp;&nbsp;<span class="c-grey">// ... database fallback logic</span><br>
-                                        }
-                                    </div>
-                                    <div class="status-bar">
-                                        <span>⚡ Performance: 100</span>
-                                        <span>🛡️ Security: A+</span>
-                                    </div>
+                                <div class="window-content" style="color: #a5f3fc; font-family: monospace;">
+                                    &lt;Post title="SEO Guide" /&gt;<br>
+                                    &lt;Meta description="..." /&gt;<br>
+                                    <br>
+                                    <span style="color:#4ade80">Build Success: 0.4s</span>
                                 </div>
-                            </div>
+                           </div>
                         </div>
-                    </article>
-
-                    <article class="magazine-card">
-                        <span class="card-category">CMS & SEO</span>
-                        <h4 class="card-title">Personal Blog Engine</h4>
-                        <p class="card-text">
-                            Platform blog kustom yang dioptimalkan untuk SEO. Menggunakan Astro untuk kecepatan loading maksimal dan integrasi Headless CMS.
-                        </p>
-                        <div class="card-tags">
-                            <span>Astro</span><span>Markdown</span><span>SEO</span>
-                        </div>
-                        <a href="#" class="card-link">View Details →</a>
-                    </article>
-
-                    <article class="magazine-card">
-                        <span class="card-category">COMMERCE UX</span>
-                        <h4 class="card-title">Interactive Store Demo</h4>
-                        <p class="card-text">
-                            Simulasi toko online dengan alur belanja end-to-end. Mulai dari katalog, manajemen keranjang, hingga simulasi checkout (sukses/gagal). Fokus pada UX responsif.
-                        </p>
-                        <div class="card-tags">
-                            <span>Frontend Logic</span><span>UX/UI</span><span>Payment Sim</span>
-                        </div>
-                        <a href="https://toko-online-three-nu.vercel.app/" target="_blank" class="card-link">Try Demo ↗</a>
-                    </article>
-
-                    <article class="magazine-card">
-                        <span class="card-category">INTERACTIVE UI</span>
-                        <h4 class="card-title">Portfolio v1 (Legacy)</h4>
-                        <p class="card-text">
-                            Eksperimen awal menggunakan Vanilla JavaScript dan HTML5 murni. Fokus pada animasi DOM dan manipulasi event tanpa framework.
-                        </p>
-                        <div class="card-tags">
-                            <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span>
-                        </div>
-                        <a href="#" class="card-link">View Details →</a>
                     </article>
 
                 </div>
@@ -192,6 +203,4 @@
     </footer>
 
 </body>
-
 </html>
-
