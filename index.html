@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nama Anda | Creative Developer</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Portfolio | Web Architect & Developer</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#skills">Tech Stack</a></li>
-            <li><a href="#showcase">Showcase</a></li>
+            <li><a href="#hero">Profile</a></li>
+            <li><a href="#philosophy">Approach</a></li>
+            <li><a href="#work">Showcase</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="profile" class="hero">
-            <div class="container">
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
                 <div class="hero-badge">Web Developer & Architect</div>
-                <h1 class="hero-title">Building <span class="accent">Robust</span> <br> Digital Ecosystems.</h1>
+                <h1 class="hero-title">Building <span class="accent-text">Robust</span> <br> Digital Ecosystems.</h1>
                 
                 <p class="hero-subtitle">
                     Web developer dengan pengalaman membangun dan mengelola aplikasi web secara end-to-end menggunakan teknologi modern maupun CMS. 
@@ -46,41 +48,37 @@
                     <span class="skill-chip">Redis</span>
                 </div>
 
-                <div class="profile-actions">
-                    <a href="#showcase" class="btn-glow">Lihat Magazine Showcase</a>
+                <div class="hero-actions">
+                    <a href="#work" class="btn-glow">Lihat Magazine Showcase</a>
                 </div>
             </div>
         </section>
 
-         <section class="section" style="padding-bottom: 0;"> <div class="container">
-            <div class="philosophy-grid">
-                
-                <div class="philo-card">
-                    <div class="philo-icon">🏗️</div>
-                    <h3>End-to-End Builder</h3>
-                    <p>Terbiasa menangani seluruh siklus proyek. Dari merancang database, logika backend, hingga interaksi frontend.</p>
-                </div>
+        <section id="philosophy" class="section">
+            <div class="container">
+                <div class="philosophy-grid">
+                    <article class="philo-card">
+                        <div class="philo-icon">🏗️</div>
+                        <h3>End-to-End Builder</h3>
+                        <p>Terbiasa menangani seluruh siklus proyek secara mandiri. Dari merancang skema database, menyusun logika backend, hingga memoles interaksi frontend pixel-perfect.</p>
+                    </article>
 
-                <div class="philo-card">
-                    <div class="philo-icon">🛡️</div>
-                    <h3>Real-World Resilience</h3>
-                    <p>Fokus pada "Unhappy Path". Sistem dirancang untuk tetap masuk akal bagi pengguna meski terjadi kegagalan jaringan atau error.</p>
-                </div>
+                    <article class="philo-card">
+                        <div class="philo-icon">🛡️</div>
+                        <h3>Real-World Resilience</h3>
+                        <p>Fokus pada "Unhappy Path". Sistem dirancang untuk tetap masuk akal dan aman bagi pengguna bahkan ketika terjadi kegagalan jaringan atau input yang tidak valid.</p>
+                    </article>
 
-                <div class="philo-card highlight-ai">
-                    <div class="philo-icon">🤖</div>
-                    <h3>AI-Augmented Workflow</h3>
-                    <p>
-                        Menggunakan AI untuk akselerasi, bukan sebagai "black box". 
-                        Arsitektur, logika bisnis, dan keputusan teknis tetap berada di bawah <strong>kendali penuh</strong> dan pemahaman saya.
-                    </p>
+                    <article class="philo-card ai-card">
+                        <div class="philo-icon">🤖</div>
+                        <h3>AI-Augmented Workflow</h3>
+                        <p>Menggunakan AI sebagai akselerator, bukan "black box". Arsitektur sistem, logika bisnis, dan keputusan teknis tetap berada di bawah <strong>kendali penuh</strong> dan pemahaman saya.</p>
+                    </article>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-        <section id="showcase" class="section">
+        <section id="work" class="section">
             <div class="container">
                 <div class="section-header">
                     <span class="section-label">SELECTED WORKS</span>
@@ -101,8 +99,8 @@
                             </p>
                             
                             <div class="cover-meta">
-                                <strong>Role:</strong> Fullstack Engineering, DevOps, UI/UX Design<br>
-                                <strong>Status:</strong> Live Production (v1.2.0)
+                                <strong>Role:</strong> Fullstack Engineering, DevOps, UI/UX<br>
+                                <strong>Status:</strong> Live Production v1.2.0
                             </div>
 
                             <div class="tech-stack-row">
@@ -112,13 +110,11 @@
                                 <span>PostgreSQL</span>
                                 <span>Prisma</span>
                                 <span>Redis</span>
-                                <span>Git/GitHub</span>
                                 <span>Vercel</span>
                             </div>
 
                             <div class="cover-actions">
                                 <a href="https://crevalen.xyz" target="_blank" class="btn-link">Visit Site ↗</a>
-                                <a href="#" class="btn-link dimmed">Read Case Study</a>
                             </div>
                         </div>
                         
@@ -127,9 +123,9 @@
                                 <div class="dots"><span></span><span></span><span></span></div>
                                 <div class="window-content">
                                     <div class="code-block">
-                                        <span class="c-purple">import</span> { redis } <span class="c-purple">from</span> '$lib/server/redis';<br><br>
+                                        <span class="c-purple">import</span> { redis } <span class="c-purple">from</span> '$lib/server';<br><br>
                                         <span class="c-blue">export const</span> load = <span class="c-blue">async</span> ({ params }) => {<br>
-                                        &nbsp;&nbsp;<span class="c-grey">// High performance caching layer</span><br>
+                                        &nbsp;&nbsp;<span class="c-grey">// High performance caching</span><br>
                                         &nbsp;&nbsp;<span class="c-blue">const</span> cached = <span class="c-purple">await</span> redis.get(params.slug);<br>
                                         &nbsp;&nbsp;<span class="c-purple">if</span> (cached) <span class="c-purple">return</span> JSON.parse(cached);<br>
                                         &nbsp;&nbsp;<span class="c-grey">// ... database fallback logic</span><br>
@@ -137,7 +133,7 @@
                                     </div>
                                     <div class="status-bar">
                                         <span>⚡ Performance: 100</span>
-                                        <span>🛡️ SEO: 100</span>
+                                        <span>🛡️ Security: A+</span>
                                     </div>
                                 </div>
                             </div>
@@ -145,12 +141,10 @@
                     </article>
 
                     <article class="magazine-card">
-                        <div class="card-header">
-                            <span class="card-category">CMS & SEO</span>
-                        </div>
+                        <span class="card-category">CMS & SEO</span>
                         <h4 class="card-title">Personal Blog Engine</h4>
                         <p class="card-text">
-                            Platform blog kustom yang dioptimalkan untuk SEO. Menggunakan Astro untuk kecepatan loading maksimal dan integrasi Headless CMS untuk pengelolaan konten yang mudah.
+                            Platform blog kustom yang dioptimalkan untuk SEO. Menggunakan Astro untuk kecepatan loading maksimal dan integrasi Headless CMS.
                         </p>
                         <div class="card-tags">
                             <span>Astro</span><span>Markdown</span><span>SEO</span>
@@ -159,12 +153,10 @@
                     </article>
 
                     <article class="magazine-card">
-                        <div class="card-header">
-                            <span class="card-category">FULLSTACK APP</span>
-                        </div>
+                        <span class="card-category">FULLSTACK APP</span>
                         <h4 class="card-title">E-Commerce Dashboard</h4>
                         <p class="card-text">
-                            Sistem manajemen stok dan penjualan real-time. Dibangun dengan Next.js dan PHP API legacy, menunjukkan kemampuan integrasi antar teknologi yang berbeda.
+                            Sistem manajemen stok dan penjualan real-time. Dibangun dengan Next.js dan PHP API legacy, menunjukkan kemampuan integrasi teknologi.
                         </p>
                         <div class="card-tags">
                             <span>Next.js</span><span>PHP</span><span>MySQL</span>
@@ -173,12 +165,10 @@
                     </article>
 
                     <article class="magazine-card">
-                        <div class="card-header">
-                            <span class="card-category">INTERACTIVE UI</span>
-                        </div>
-                        <h4 class="card-title">Portfolio</h4>
+                        <span class="card-category">INTERACTIVE UI</span>
+                        <h4 class="card-title">Portfolio v1 (Legacy)</h4>
                         <p class="card-text">
-                            Eksperimen awal menggunakan Vanilla JavaScript dan HTML5 murni. Fokus pada animasi DOM dan manipulasi event tanpa framework apapun.
+                            Eksperimen awal menggunakan Vanilla JavaScript dan HTML5 murni. Fokus pada animasi DOM dan manipulasi event tanpa framework.
                         </p>
                         <div class="card-tags">
                             <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span>
@@ -190,7 +180,12 @@
             </div>
         </section>
     </main>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Crafted with Code & Logic.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
