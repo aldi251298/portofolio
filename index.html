@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aldi Syahdan Maulana | Web Developer</title>
+    <title>Portfolio | Web Architect & Developer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,12 +39,12 @@
                     <span class="skill-chip">PHP</span>
                     <span class="skill-chip highlight">SvelteKit</span>
                     <span class="skill-chip highlight">Next.js</span>
-                    <span class="skill-chip">Astro</span>
-                    <span class="skill-chip">Nuxt</span>
-                    <span class="skill-chip">Headless CMS</span>
-                    <span class="skill-chip">SEO Optimization</span>
-                    <span class="skill-chip">PostgreSQL</span>
+                    <span class="skill-chip highlight">React.js</span>
+                    <span class="skill-chip">TypeScript</span>
+                    <span class="skill-chip">Tailwind CSS</span>
+                    <span class="skill-chip">Supabase</span>
                     <span class="skill-chip">Prisma ORM</span>
+                    <span class="skill-chip">PostgreSQL</span>
                     <span class="skill-chip">Redis</span>
                 </div>
 
@@ -161,33 +161,25 @@
 
                     <article class="project-row reverse">
                         <div class="project-content">
-                            <span class="project-tag">SEO & CONTENT</span>
-                            <h3 class="project-title">SEO Blog Engine</h3>
+                            <span class="project-tag">FINTECH & REAL-TIME</span>
+                            <h3 class="project-title">Terminal Crypto Arbiter</h3>
                             <p class="project-desc">
-                                Platform blog kustom yang dioptimalkan untuk performa SEO maksimal. 
-                                Menggunakan arsitektur Static Site Generation (SSG) untuk kecepatan loading instan. 
-                                Terintegrasi dengan Headless CMS untuk kemudahan pengelolaan konten tanpa menyentuh kode.
+                                Pemindai arbitrase kripto tingkat profesional yang dirancang untuk mengidentifikasi dan memanfaatkan perbedaan harga antara Bursa Global Tier-1 (Binance, Coinbase) dan Pasar Lokal secara real-time.
+                                Dibangun dengan fokus pada UI/UX Institusional dan logika eksekusi otomatis yang presisi.
                             </p>
                             <div class="project-meta">
-                                <strong>Focus:</strong> Performance (Lighthouse 100), SEO
+                                <strong>Focus:</strong> Real-time Data, Institutional UI, Serverless Logic
                             </div>
                             <div class="tech-stack-row">
-                                <span>Astro</span><span>Markdown</span><span>Headless CMS</span>
+                                <span>React (Vite)</span><span>TypeScript</span><span>Tailwind v4</span>
+                                <span>Supabase</span><span>Prisma</span><span>Serverless</span>
                             </div>
                             <div class="project-actions">
-                                <a href="#" class="btn-link">View Details ↗</a>
+                                <a href="#" class="btn-link">View Repository ↗</a>
                             </div>
                         </div>
-                        <div class="project-image-wrapper code-bg">
-                           <div class="browser-window">
-                                <div class="dots"><span></span><span></span><span></span></div>
-                                <div class="window-content" style="color: #a5f3fc; font-family: monospace;">
-                                    &lt;Post title="SEO Guide" /&gt;<br>
-                                    &lt;Meta description="..." /&gt;<br>
-                                    <br>
-                                    <span style="color:#4ade80">Build Success: 0.4s</span>
-                                </div>
-                           </div>
+                        <div class="project-image-wrapper">
+                            <img src="assets/images/crypto-terminal.png" alt="Crypto Arbiter Terminal Screenshot" class="project-img">
                         </div>
                     </article>
 
@@ -201,34 +193,29 @@
             <p>&copy; 2026 Crafted with Code & Logic.</p>
         </div>
     </footer>
-<script>
-        // 1. Pilih elemen yang ingin di-animasikan saat scroll
+
+    <script>
         const scrollElements = document.querySelectorAll('.philo-card, .project-row, .section-header');
 
-        // 2. Tambahkan class awal 'reveal-element' ke semua target
         scrollElements.forEach((el) => {
             el.classList.add('reveal-element');
         });
 
-        // 3. Buat Observer (Pengamat)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Saat elemen masuk layar, tambahkan class 'active'
                     entry.target.classList.add('active');
-                    // (Opsional) Hentikan observasi agar animasi cuma jalan sekali
                     observer.unobserve(entry.target); 
                 }
             });
         }, {
-            threshold: 0.15, // Animasi jalan saat 15% elemen terlihat
-            rootMargin: "0px 0px -50px 0px" // Offset sedikit dari bawah
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
         });
 
-        // 4. Mulai mengamati
         scrollElements.forEach((el) => observer.observe(el));
         
-        // --- Smooth Scroll untuk Navbar ---
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -238,7 +225,6 @@
             });
         });
     </script>
+
 </body>
 </html>
-
-
